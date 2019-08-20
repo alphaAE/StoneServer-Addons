@@ -1,3 +1,3 @@
 # StoneServer-Addons
 
-0x0
+0x00
