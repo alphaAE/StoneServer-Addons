@@ -1,0 +1,18 @@
+{
+  "format_version": 1,
+  "header": {
+    "name": "TestStoneAddon",
+    "description": "",
+    "uuid": "76a5efc8-0be8-8e18-df6c-8650093848b7",    
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 12, 0]
+  },
+  "modules": [
+    {
+      "description": "data",
+      "type": "data",
+      "uuid": "e2c26818-e651-441e-78f3-150465aa0eb3",
+      "version": [1, 0, 0]
+    }
+  ]
+}
