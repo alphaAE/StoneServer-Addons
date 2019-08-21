@@ -17,3 +17,29 @@ function onPlayerCreated(eventData){
         // system.executeCommand(`tell @a[name=${name}] §欢迎你 ${name}`,(data)=>{});
     }
 }
+
+system.registerCommand("setblock", {
+    description: "Set extra block at specify position",
+    permission: 1,
+    overloads: [
+      {
+        parameters: [
+          {
+            type: "position",
+            name: "pos"
+          },
+          {
+            type: "block",
+            name: "block"
+          }
+        ],
+  
+        handler([pos, block]) {
+          if (!this.entity || !system.hasComponent(this.entity, MinecraftComponent.TickWorld)) throw `Can only be used by entity that has tick world`;
+          const tick = system.getComponent<ITickWorldComponent>(this.entity, MinecraftComponent.TickWorld);
+          server.log(JSON.stringify(tick));
+          system.setExtraBlock(tick.data.ticking_area, block, pos);
+        }
+      } as CommandOverload<["position", "block"]>
+    ]
+  });
