@@ -9,7 +9,7 @@ export class Utils {
         this.system = system;
     }
 
-    static log(message: string): void {
+    static logs(message: string): void {
         this.system.log(`[${this.addonName}]` + message);
     }
 

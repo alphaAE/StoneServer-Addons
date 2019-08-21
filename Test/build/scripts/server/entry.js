@@ -5,7 +5,7 @@
         static init(system) {
             this.system = system;
         }
-        static log(message) {
+        static logs(message) {
             this.system.log(`[${this.addonName}]` + message);
         }
         static getEntityName(entity) {
@@ -17,7 +17,7 @@
     const system = server.registerSystem(0, 0);
     system.initialize = function () {
         Utils.init(system);
-        Utils.log("by alphaAE Loaded");
+        Utils.logs("by alphaAE Loaded");
         system.listenForEvent("minecraft:entity_created", onPlayerCreated);
     };
     function onPlayerCreated(eventData) {
@@ -26,7 +26,7 @@
             throw "not entity";
         if (entity.__identifier__ == "minecraft:player") {
             let name = Utils.getEntityName(entity);
-            Utils.log(`玩家 ${name} 加入游戏!`);
+            Utils.logs(`玩家 ${name} 加入游戏!`);
             // system.executeCommand(`tell @a[name=${name}] §欢迎你 ${name}`,(data)=>{});
         }
     }
@@ -43,7 +43,7 @@
                 ],
                 handler([functionName]) {
                     // eval(functionName + "();");
-                    Utils.log(functionName + "();");
+                    Utils.logs(functionName + "();");
                 }
             }
         ]
