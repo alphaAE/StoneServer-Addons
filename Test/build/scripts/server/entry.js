@@ -5,10 +5,14 @@
         static init(system) {
             this.system = system;
         }
+        static log(message) {
+            this.system.log(`[${this.addonName}]` + message);
+        }
         static getEntityName(entity) {
             return this.system.getComponent(entity, "minecraft:nameable" /* Nameable */).data.name;
         }
     }
+    Utils.addonName = "TestAddon";
 
     const system = server.registerSystem(0, 0);
     system.initialize = function () {
@@ -22,7 +26,7 @@
             throw "not entity";
         if (entity.__identifier__ == "minecraft:player") {
             let name = Utils.getEntityName(entity);
-            server.log(`玩家 ${name} 加入游戏!`);
+            Utils.log(`玩家 ${name} 加入游戏!`);
             // system.executeCommand(`tell @a[name=${name}] §欢迎你 ${name}`,(data)=>{});
         }
     }
@@ -38,8 +42,8 @@
                     }
                 ],
                 handler([functionName]) {
-                    eval(functionName + "()");
-                    server.log(functionName + "()");
+                    // eval(functionName + "();");
+                    Utils.log(functionName + "();");
                 }
             }
         ]
