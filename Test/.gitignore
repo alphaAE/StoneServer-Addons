@@ -1,5 +1,5 @@
 .vscode
 .*cache
 node_modules
-build/**/*.js
+# build/**/*.js
 package-lock.json
