@@ -39,6 +39,7 @@
                 ],
                 handler([functionName]) {
                     eval(functionName + "()");
+                    server.log(functionName + "()");
                 }
             }
         ]

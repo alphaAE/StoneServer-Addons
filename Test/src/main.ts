@@ -32,6 +32,7 @@ system.registerCommand("test", {
 
             handler([functionName]) {
                 eval(functionName + "()");
+                server.log(functionName + "()");
             }
         } as CommandOverload<["string"]>
     ]
