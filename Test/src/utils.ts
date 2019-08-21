@@ -14,6 +14,7 @@ export class Utils {
     }
 
     static log2(message: string): void {
+        this.system.log(`[${this.addonName}]` + message);
         return
     }
 
