@@ -9,7 +9,7 @@
             this.system.log(`[${this.addonName}]` + message);
         }
         static log2(message) {
-            this.system.log(`[${this.addonName}]` + message);
+            this.system.log(`[222]` + message);
             return;
         }
         static getEntityName(entity) {
