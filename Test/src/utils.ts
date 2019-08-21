@@ -14,8 +14,7 @@ export class Utils {
     }
 
     static log2(message: string): void {
-        this.system.log(message);
-        return
+        
     }
 
     static getEntityName(entity: IEntity): string {
