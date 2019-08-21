@@ -13,7 +13,7 @@ function onPlayerCreated(eventData){
     if (!entity) throw "not entity";
     if (entity.__identifier__ == "minecraft:player") {
         let name = Utils.getEntityName(entity);
-        server.log(`玩家 ${name} 加入游戏`);
+        server.log(`玩家 ${name} 加入游戏!`);
         // system.executeCommand(`tell @a[name=${name}] §欢迎你 ${name}`,(data)=>{});
     }
 }
