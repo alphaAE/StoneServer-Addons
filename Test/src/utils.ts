@@ -1,7 +1,7 @@
 
 export class Utils {
 
-    static addonName = "TestAddon";
+    static addonName: string = "TestAddon";
 
     static system;
 
@@ -9,7 +9,7 @@ export class Utils {
         this.system = system;
     }
 
-    static log(message: string) :void{
+    static log(message: string): void {
         this.system.log(`[${this.addonName}]` + message);
     }
 
