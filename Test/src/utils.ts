@@ -1,24 +1,19 @@
+import { Config } from "./config";
 
 export class Utils {
 
-    static addonName: string = "TestAddon";
+    static system: IVanillaServerSystem;
 
-    static system;
-
-    static init(system): void {
+    static init(system: IVanillaServerSystem): void {
         this.system = system;
     }
 
     static log(message: string) {
-        this.system.log(`[${this.addonName}]` + message);
-    }
-
-    static log2(message: string): void {
-        
+        server.log(`[${Config.addonName}] ` + message);
     }
 
     static getEntityName(entity: IEntity): string {
-        return this.system.getComponent(entity, MinecraftComponent.Nameable).data.name;
+        return this.system.getComponent<INameableComponent>(entity, MinecraftComponent.Nameable).data.name;
     }
-
+    
 }
