@@ -6,7 +6,7 @@
             this.system = system;
         }
         static log(message) {
-            return this.system.log(`[${this.addonName}]` + message);
+            this.system.log(`[${this.addonName}]` + message);
         }
         static getEntityName(entity) {
             return this.system.getComponent(entity, "minecraft:nameable" /* Nameable */).data.name;

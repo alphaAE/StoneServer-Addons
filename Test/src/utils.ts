@@ -9,8 +9,8 @@ export class Utils {
         this.system = system;
     }
 
-    static log(message: string): any {
-        return this.system.log(`[${this.addonName}]` + message);
+    static log(message: string) {
+        this.system.log(`[${this.addonName}]` + message);
     }
 
     static getEntityName(entity: IEntity): string {
