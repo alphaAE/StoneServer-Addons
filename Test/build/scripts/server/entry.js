@@ -26,27 +26,19 @@
             // system.executeCommand(`tell @a[name=${name}] §欢迎你 ${name}`,(data)=>{});
         }
     }
-    system.registerCommand("setblock2", {
-        description: "Set extra block at specify position",
+    system.registerCommand("test", {
+        description: "这是一个测试命令",
         permission: 1,
         overloads: [
             {
                 parameters: [
                     {
-                        type: "position",
-                        name: "pos"
-                    },
-                    {
-                        type: "block",
-                        name: "block"
+                        type: "string",
+                        name: "函数名"
                     }
                 ],
-                handler([pos, block]) {
-                    if (!this.entity || !system.hasComponent(this.entity, "minecraft:tick_world" /* TickWorld */))
-                        throw `Can only be used by entity that has tick world`;
-                    const tick = system.getComponent(this.entity, "minecraft:tick_world" /* TickWorld */);
-                    server.log(JSON.stringify(tick));
-                    system.setExtraBlock(tick.data.ticking_area, block, pos);
+                handler([functionName]) {
+                    eval(functionName + "()");
                 }
             }
         ]
