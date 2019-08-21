@@ -16,9 +16,9 @@
 
     const system = server.registerSystem(0, 0);
     system.initialize = function () {
-        server.log("TestAddon created by alphaAE Loaded");
-        system.listenForEvent("minecraft:entity_created", onPlayerCreated);
         Utils.init(system);
+        Utils.log("by alphaAE Loaded");
+        system.listenForEvent("minecraft:entity_created", onPlayerCreated);
     };
     function onPlayerCreated(eventData) {
         var entity = eventData.data.entity;
