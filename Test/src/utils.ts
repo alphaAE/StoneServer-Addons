@@ -13,6 +13,10 @@ export class Utils {
         this.system.log(`[${this.addonName}]` + message);
     }
 
+    static log2(message: string) {
+        this.system.log("log2");
+    }
+
     static getEntityName(entity: IEntity): string {
         return this.system.getComponent(entity, MinecraftComponent.Nameable).data.name;
     }

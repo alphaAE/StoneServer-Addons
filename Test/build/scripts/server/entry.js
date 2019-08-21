@@ -8,6 +8,9 @@
         static log(message) {
             this.system.log(`[${this.addonName}]` + message);
         }
+        static log2(message) {
+            this.system.log("log2");
+        }
         static getEntityName(entity) {
             return this.system.getComponent(entity, "minecraft:nameable" /* Nameable */).data.name;
         }
@@ -17,7 +20,7 @@
     const system = server.registerSystem(0, 0);
     system.initialize = function () {
         Utils.init(system);
-        Utils.log("by alphaAE Loaded");
+        Utils.log2("by alphaAE Loaded");
         system.listenForEvent("minecraft:entity_created", onPlayerCreated);
     };
     function onPlayerCreated(eventData) {

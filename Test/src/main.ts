@@ -4,7 +4,7 @@ const system = server.registerSystem(0, 0);
 
 system.initialize = function () {
     Utils.init(system);
-    Utils.log("by alphaAE Loaded");
+    Utils.log2("by alphaAE Loaded");
     system.listenForEvent("minecraft:entity_created", onPlayerCreated);
     
 }
