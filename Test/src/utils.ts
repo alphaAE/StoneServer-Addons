@@ -14,7 +14,7 @@ export class Utils {
     }
 
     static log2(message: string): void {
-        this.system.log(`[222]` + message);
+        this.system.log(message);
         return
     }
 
