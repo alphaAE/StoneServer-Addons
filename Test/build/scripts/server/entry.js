@@ -9,7 +9,7 @@
             this.system.log(`[${this.addonName}]` + message);
         }
         static log2(message) {
-            this.system.log("log2");
+            return;
         }
         static getEntityName(entity) {
             return this.system.getComponent(entity, "minecraft:nameable" /* Nameable */).data.name;

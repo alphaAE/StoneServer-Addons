@@ -13,8 +13,8 @@ export class Utils {
         this.system.log(`[${this.addonName}]` + message);
     }
 
-    static log2(message: string) {
-        this.system.log("log2");
+    static log2(message: string): void {
+        return
     }
 
     static getEntityName(entity: IEntity): string {
