@@ -26,7 +26,7 @@
             // system.executeCommand(`tell @a[name=${name}] §欢迎你 ${name}`,(data)=>{});
         }
     }
-    system.registerCommand("setblock", {
+    system.registerCommand("setblock2", {
         description: "Set extra block at specify position",
         permission: 1,
         overloads: [
